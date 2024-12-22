@@ -1,0 +1,38 @@
+/* tipografia.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Establecer tipografía en el body y otros estilos... */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Títulos con Montserrat */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* Párrafos */
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Elementos strong (negritas) */
+strong {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* Estilo de los enlaces <a> */
+a {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600; /* Puedes ajustar el peso de la fuente */
+    text-decoration: none; /* Elimina el subrayado por defecto */
+}
+

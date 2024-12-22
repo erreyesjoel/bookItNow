@@ -1,0 +1,21 @@
+html, body {
+    height: 100%; /* Ocupa el 100% de la altura de la ventana */
+    margin: 0; /* Elimina los márgenes por defecto */
+}
+
+body {
+    display: flex; /* Convierte el body en un contenedor flexbox */
+    flex-direction: column; /* Organiza los elementos hijos en una columna (uno debajo del otro) */
+}
+
+/* Estilo del footer */
+footer {
+    background-color: #f4f4f4; /* Color de fondo gris claro */
+    width: 100%; /* El footer ocupa todo el ancho de la página */
+    min-height: 8vh; /* Altura mínima del footer de 8% de la altura de la ventana */
+    display: flex; /* Hace que el footer sea un contenedor flexbox */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    padding: 20px 0; /* Añade espacio de 20px arriba y abajo dentro del footer */
+    margin-top: auto; /* Empuja el footer hacia la parte inferior de la página */
+}

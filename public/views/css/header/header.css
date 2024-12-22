@@ -1,0 +1,41 @@
+body { /* para evitar que haya los bordes en blanco en el header, arriba y hacia los lados */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:  #f4f4f4;
+    width: 100%; /* anchura del header */
+    height: 15vh; /* altura del header */
+    justify-content: flex-start; /* Para alinear el contenido a la izquierda */
+    align-items: center;
+    display: flex;
+    padding-left: 0;
+}
+
+header .logo {
+   width: 15%;
+   height: auto;
+   display: block;
+   margin-left: -40px; /* para ajustarlo a la izquierda */
+   margin-top: 2em; /* para bajarlo un poco, el logo */
+   box-shadow: #b12525;
+}
+
+.btn-menu {
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-menu:hover {
+    background-color: #dbdbdb;
+}
+
+a {
+    text-decoration: none;
+}

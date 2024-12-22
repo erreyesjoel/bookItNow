@@ -1,0 +1,63 @@
+.mensaje-bienvenida {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;  /* Reduce el relleno */
+    width: 50%;  /* Establece un ancho específico para hacerlo más pequeño */
+    height: auto;  /* Ajusta la altura automáticamente */
+    border-radius: 12px;  /* Bordes redondeados */
+    margin: 0 auto;  /* Centrado horizontal */
+    margin-top: 20px;
+}
+
+
+
+.tarjetas-restaurante {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Hace que las tarjetas se hagan en fila horizontal, cada 4 restaurantes, nueva fila */
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    margin-left: 20px;
+}
+
+.tarjeta {
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4px 4px 12px rgba(5, 5, 5, 0.3);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para transformación y sombra */
+    margin-top: 20px;
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px); /* Desplazamiento hacia arriba al pasar el cursor */
+    box-shadow: 4px 4px 20px rgba(5, 5, 5, 0.4); /* Aumenta la sombra al pasar el cursor */
+}
+
+.tarjeta img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Transición para la imagen */
+}
+
+.tarjeta:hover img {
+    transform: scale(1.05); /* Escala ligeramente la imagen al pasar el cursor */
+}
+
+.tarjeta h2 {
+    margin: 10px 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.tarjeta p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #555;
+}
