@@ -1,6 +1,7 @@
 CREATE DATABASE IF NOT EXISTS itnow;
 USE itnow;
 
+
 -- Crear tabla clientes
 CREATE TABLE clientes (
     DNI VARCHAR(255) PRIMARY KEY,  -- DNI como clave primaria
@@ -8,13 +9,25 @@ CREATE TABLE clientes (
     correo_electronico VARCHAR(255)
 );
 
--- Crear tabla restaurantes
+-- Eliminar las tablas que dependen de restaurantes
+DROP TABLE IF EXISTS reservas;
+DROP TABLE IF EXISTS mesas;
+
+-- Eliminar la tabla restaurantes
+DROP TABLE IF EXISTS restaurantes;
+
+-- Crear la tabla restaurantes
 CREATE TABLE restaurantes (
     nombre_restaurante VARCHAR(255) PRIMARY KEY,  -- Nombre del restaurante como clave primaria
     direccion VARCHAR(255),  -- Dirección del restaurante
     telefono VARCHAR(255),  -- Teléfono de contacto del restaurante
-    foto VARCHAR(255)
+    foto VARCHAR(255),  -- Foto del restaurante
+    estado ENUM('Disponible', 'No disponible', 'En obras') DEFAULT 'Disponible'  -- Estado del restaurante
 );
+
+
+
+
 
 -- Crear tabla mesas
 CREATE TABLE mesas (
@@ -51,7 +64,7 @@ VALUES
     ('Kyoka', 'Av. del Tèxtil, s/n, 08223 Terrassa, Barcelona', '937 12 87 99', '../../views/images/kyokaParcValles.jpg'),
     ('Talaiot', 'Carrer de Arquímedes, 132, 08224 Terrassa, Barcelona', '629 81 24 88', '../../views/images/talaiot.jpeg');
 
-
+SELECT * FROM restaurantes;
 
 -- Crear el usuario administrador
 CREATE USER 'administrador'@'localhost' IDENTIFIED BY 'administrador';
@@ -61,3 +74,13 @@ GRANT ALL PRIVILEGES ON itnow.* TO 'administrador'@'localhost';
 
 -- Refrescar los privilegios para que se apliquen inmediatamente
 FLUSH PRIVILEGES;
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,  -- Identificador único de usuario
+    nombre VARCHAR(255) NOT NULL,  -- Nombre completo del usuario
+    correo VARCHAR(255) NOT NULL UNIQUE,  -- Correo electrónico único
+    password VARCHAR(255),  -- Contraseña (solo en registro clásico)
+    google_id VARCHAR(255),  -- ID de Google (solo en registro con Google)
+    estado ENUM('activo', 'inactivo') DEFAULT 'activo',  -- Estado del usuario
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- Fecha de registro
+);

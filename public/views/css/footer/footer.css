@@ -10,7 +10,7 @@ body {
 
 /* Estilo del footer */
 footer {
-    background-color: #f4f4f4; /* Color de fondo gris claro */
+    background-color: #ffff; /* Color de fondo gris claro */
     width: 100%; /* El footer ocupa todo el ancho de la página */
     min-height: 8vh; /* Altura mínima del footer de 8% de la altura de la ventana */
     display: flex; /* Hace que el footer sea un contenedor flexbox */

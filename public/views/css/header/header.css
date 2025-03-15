@@ -4,7 +4,7 @@ body { /* para evitar que haya los bordes en blanco en el header, arriba y hacia
 }
 
 header {
-    background-color:  #f4f4f4;
+    background-color:  #ffff;
     width: 100%; /* anchura del header */
     height: 15vh; /* altura del header */
     justify-content: flex-start; /* Para alinear el contenido a la izquierda */
@@ -24,7 +24,7 @@ header .logo {
 
 .btn-menu {
     padding: 10px 20px;
-    background-color: #f4f4f4;
+    background-color: #ffff;
     color: rgb(0, 0, 0);
     border: none;
     border-radius: 5px;
@@ -33,9 +33,26 @@ header .logo {
 }
 
 .btn-menu:hover {
-    background-color: #dbdbdb;
+    background-color: #e4e4e4;
 }
 
 a {
     text-decoration: none;
+}
+
+.login-button {
+    width: 86px;
+    height: auto;
+    margin-left: 64%;
+    margin-top: -10px;
+    color: white; /* color del texto */
+    border: none; /* elimina los bordes */
+    border-radius: 5px; /* bordes redondeados */
+    font-size: 16px; /* tamaño de la fuente */
+    cursor: pointer; /* cambia el cursor cuando pasa sobre el botón */
+    transition: background-color 0.3s ease; /* transición suave al cambiar el color */
+}
+
+.login-button:hover {
+    background-color: #cccfcc; /* nuevo color de fondo cuando el cursor está sobre el botón */
 }

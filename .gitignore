@@ -1,0 +1,7 @@
+# Ignorar el archivo callback.php
+callback.php
+
+# Ignorar la carpeta vendor/
+vendor/
+
+public/database/connection/connection.php
