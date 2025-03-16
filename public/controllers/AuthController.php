@@ -1,7 +1,8 @@
 <?php
 require_once '../models/User.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/database/connection/connection.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/../callback.php';
+require_once __DIR__ . '/../models/User.php';  // Ruta relativa desde controllers/
+require_once __DIR__ . '/../database/connection/connection.php';  // Ruta relativa desde controllers/
+
 
 class AuthController {
     private $userModel;

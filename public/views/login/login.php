@@ -1,7 +1,8 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/models/User.php';
 include '../seccions/header/header.php'; /* para incluir el header */
 include '../../callback.php';  
-
+require_once $_SERVER['DOCUMENT_ROOT'] . '/database/connection/connection.php';
 ?>
 
 <!DOCTYPE html>
