@@ -1,5 +1,6 @@
 <?php
-include '../seccions/header/header.php'; // Asegúrate de que la ruta sea correcta
+include '../seccions/header/header.php'; 
+include '../../callback.php';  // Retrocede dos directorios
 
 // Incluir el archivo de configuración de Google
 include $_SERVER['DOCUMENT_ROOT'] . '/../callback.php';
@@ -11,7 +12,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/../callback.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="stylesheet" href="registro.css"> <!-- Asegúrate de tener tu archivo CSS para estilo de registro -->
+    <link rel="stylesheet" href="registro.css"> 
 </head>
 <body>
     <form action="procesar_registro.php" method="POST">
@@ -64,5 +65,5 @@ include $_SERVER['DOCUMENT_ROOT'] . '/../callback.php';
 </html>
 
 <?php
-include '../seccions/footer/footer.php'; // Asegúrate de que la ruta sea correcta
+include '../seccions/footer/footer.php'; 
 ?>

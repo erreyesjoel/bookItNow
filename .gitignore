@@ -1,5 +1,5 @@
 # Ignorar el archivo callback.php
-callback.php
+public/callback.php
 
 # Ignorar la carpeta vendor/
 vendor/

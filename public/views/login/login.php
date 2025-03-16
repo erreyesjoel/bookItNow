@@ -1,6 +1,7 @@
 <?php
-include '../seccions/header/header.php'; // Asegúrate de que la ruta sea correcta
-include $_SERVER['DOCUMENT_ROOT'] . '/../callback.php'; // Incluir el archivo de configuración de Google
+include '../seccions/header/header.php'; /* para incluir el header */
+include '../../callback.php';  
+
 ?>
 
 <!DOCTYPE html>
@@ -32,12 +33,18 @@ include $_SERVER['DOCUMENT_ROOT'] . '/../callback.php'; // Incluir el archivo de
 
             <!-- Enlace para iniciar sesión con Google -->
             <?php
-            // URL de autenticación de Google
-            $authUrl = $client->createAuthUrl();
+            // Verifica si $client está configurado antes de crear la URL de autenticación
+            if (isset($client)) {
+                $authUrl = $client->createAuthUrl();
             ?>
-            <div class="google-login">
-                <a href="<?php echo $authUrl; ?>" class="button-google">Continuar con Google</a>
-            </div>
+                <div class="google-login">
+                    <a href="<?php echo $authUrl; ?>" class="button-google">Continuar con Google</a>
+                </div>
+            <?php
+            } else {
+                echo '<p>Error al configurar la autenticación de Google.</p>';
+            }
+            ?>
 
             <!-- Enlaces -->
             <div class="links">
@@ -53,5 +60,16 @@ include $_SERVER['DOCUMENT_ROOT'] . '/../callback.php'; // Incluir el archivo de
 </html>
 
 <?php
-include '../seccions/footer/footer.php'; // Asegúrate de que la ruta sea correcta
+// Verificar si el usuario ha iniciado sesión con Google
+if (isset($userInfo)) {
+    // Guardar los datos del usuario en la base de datos
+    $userModel = new User($db); // Suponiendo que ya has creado la instancia de la clase User
+    $googleUser = $userModel->findOrCreateGoogleUser($userInfo->id, $userInfo->name, $userInfo->email);
+    
+    // Redirigir al usuario a la página principal
+    header("Location: /views/index/index.php"); 
+    exit();
+}
+
+include '../seccions/footer/footer.php'; 
 ?>
