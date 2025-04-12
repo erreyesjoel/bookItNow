@@ -3,6 +3,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/models/User.php';
 include '../seccions/header/header.php'; /* para incluir el header */
 include '../../callback.php';  
 require_once $_SERVER['DOCUMENT_ROOT'] . '/database/connection/connection.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/../config/google-client.php';
 ?>
 
 <!DOCTYPE html>
@@ -34,18 +35,18 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/database/connection/connection.php';
 
             <!-- Enlace para iniciar sesión con Google -->
             <?php
-            // Verifica si $client está configurado antes de crear la URL de autenticación
-            if (isset($client)) {
-                $authUrl = $client->createAuthUrl();
-            ?>
-                <div class="google-login">
-                    <a href="<?php echo $authUrl; ?>" class="button-google">Continuar con Google</a>
-                </div>
-            <?php
-            } else {
-                echo '<p>Error al configurar la autenticación de Google.</p>';
-            }
-            ?>
+if (isset($client)) {
+    $authUrl = $client->createAuthUrl();
+?>
+    <div class="google-login">
+        <a href="<?php echo $authUrl; ?>" class="button-google">Continuar con Google</a>
+    </div>
+<?php
+} else {
+    echo '<p>Error al configurar la autenticación de Google.</p>';
+}
+?>
+
 
             <!-- Enlaces -->
             <div class="links">

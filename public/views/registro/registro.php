@@ -1,6 +1,10 @@
 <?php
 include '../seccions/header/header.php'; 
-// Incluir el archivo de configuración de Google
+
+// Incluir la configuración de Google
+require_once __DIR__ . '/../../../config/google-client.php';
+
+// Incluir el callback
 require_once __DIR__ . '/../../callback.php';
 ?>
 
@@ -43,12 +47,15 @@ require_once __DIR__ . '/../../callback.php';
 
             <!-- Enlace para registro con Google -->
             <?php
-            // URL de autenticación de Google
-            $authUrl = $client->createAuthUrl();
+            if (isset($client)) {
+                $authUrl = $client->createAuthUrl();
+                echo '<div class="google-register">';
+                echo '<a href="' . htmlspecialchars($authUrl) . '" class="button-google">Continuar con Google</a>';
+                echo '</div>';
+            } else {
+                echo '<p>Error al configurar la autenticación de Google.</p>';
+            }
             ?>
-            <div class="google-register">
-                <a href="<?php echo $authUrl; ?>" class="button-google">Continuar con Google</a>
-            </div>
 
             <!-- Enlaces -->
             <div class="links">

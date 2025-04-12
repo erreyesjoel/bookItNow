@@ -1,6 +1,7 @@
 <!-- index.php -->
 <link rel="stylesheet" href="../css/index/index.css">
 <?php
+include __DIR__ . '/../controllers/session_status.php'; // Evaluar estado de la sesión
 require_once '../../database/connection/connection.php';
 require_once '../../models/Restaurantes.php';
 

@@ -88,3 +88,5 @@ CREATE TABLE usuarios (
     email_verificado BOOLEAN DEFAULT FALSE  -- Indica si el correo está verificado
 );
 
+DELETE FROM usuarios;
+

@@ -1,6 +1,8 @@
 <?php
-require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../models/User.php';  // Ruta relativa desde controllers/
 require_once __DIR__ . '/../database/connection/connection.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../config/google-client.php'; // Configuración de Google
 
 // Obtener datos del formulario
 $name = $_POST['nombre'];

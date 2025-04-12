@@ -4,4 +4,8 @@ public/callback.php
 # Ignorar la carpeta vendor/
 vendor/
 
+# Ignorar la conexión de la base de datos
 public/database/connection/connection.php
+
+# Ignorar el archivo de configuración de Google
+config/google-client.php
