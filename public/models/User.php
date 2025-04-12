@@ -66,6 +66,11 @@ class User {
             'email_verificado' => false
         ];
     }
-    
+    public function getUserById($userId) {
+        $query = "SELECT nombre FROM usuarios WHERE id = :userId";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute([':userId' => $userId]);
+        return $stmt->fetch(PDO::FETCH_ASSOC); // Devuelve un array asociativo con los datos del usuario
+    }    
 }
 ?>
