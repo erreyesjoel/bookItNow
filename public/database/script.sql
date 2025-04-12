@@ -2,15 +2,20 @@ CREATE DATABASE IF NOT EXISTS itnow;
 USE itnow;
 
 
--- Crear tabla clientes
 CREATE TABLE clientes (
-    DNI VARCHAR(255) PRIMARY KEY,  -- DNI como clave primaria
+    DNI VARCHAR(50) PRIMARY KEY,  -- Documento de identificación como clave primaria
+    tipo_documento ENUM('DNI', 'NIE', 'Pasaporte') DEFAULT 'DNI',  -- Tipo de documento
     nombre_usuario VARCHAR(255),
-    correo_electronico VARCHAR(255)
+    correo_electronico VARCHAR(255),
+    telefono VARCHAR(15),  -- Número de teléfono (opcional)
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Marca de tiempo de creación
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP  -- Marca de tiempo de actualización
 );
+
 
 -- Eliminar las tablas que dependen de restaurantes
 DROP TABLE IF EXISTS reservas;
+DROP TABLE IF EXISTS clientes;
 DROP TABLE IF EXISTS mesas;
 
 -- Eliminar la tabla restaurantes
@@ -26,9 +31,6 @@ CREATE TABLE restaurantes (
 );
 
 
-
-
-
 -- Crear tabla mesas
 CREATE TABLE mesas (
     numero_mesa INT PRIMARY KEY,  -- Usa el número de mesa como clave primaria
@@ -38,19 +40,23 @@ CREATE TABLE mesas (
     FOREIGN KEY (nombre_restaurante) REFERENCES restaurantes(nombre_restaurante)
 );
 
--- Crear tabla reservas
 CREATE TABLE reservas (
     id_reserva INT AUTO_INCREMENT PRIMARY KEY,  -- Clave primaria de la reserva
-    DNI_cliente VARCHAR(255),  -- Referencia al DNI del cliente
+    tipo_documento ENUM('DNI', 'NIE', 'Pasaporte') DEFAULT 'DNI',  -- Tipo de documento
+    DNI_cliente VARCHAR(50),  -- Referencia al documento del cliente
     numero_mesa INT,  -- Referencia al numero_mesa
-    fecha_reserva DATE,  -- Fecha de la reserva
-    hora_reserva TIME,  -- Hora de la reserva (opcional)
-    nombre_restaurante VARCHAR(255),  -- Referencia al restaurante
+    fecha_hora_reserva DATETIME NOT NULL,  -- Combina fecha y hora
+    nombre_restaurante VARCHAR(100),  -- Referencia al restaurante
+    estado_reserva ENUM('confirmada', 'pendiente', 'cancelada') DEFAULT 'pendiente',  -- Estado de la reserva
+    comentarios TEXT,  -- Comentarios adicionales sobre la reserva
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Marca de tiempo de creación
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,  -- Marca de tiempo de actualización
     FOREIGN KEY (DNI_cliente) REFERENCES clientes(DNI),  -- Relación entre reservas y clientes
     FOREIGN KEY (numero_mesa) REFERENCES mesas(numero_mesa),  -- Relación entre reservas y mesas
     FOREIGN KEY (nombre_restaurante) REFERENCES restaurantes(nombre_restaurante)  -- Relación entre reservas y restaurantes
 );
 
+DROP TABLE IF EXISTS reservas;
 -- por si hace falta borrar algun registro 
  DELETE FROM restaurantes;
 

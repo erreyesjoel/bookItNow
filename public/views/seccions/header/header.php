@@ -9,11 +9,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/database/connection/connection.php';
   <link rel="stylesheet" href="../css/header/header.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/tipografia/tipografia.css">
-  <img class="logo" src="../images/logo.png">
+  <!-- enlace para redirigir a la pagina principal mediante la foto logo -->
+  <img class="logo" src="../images/logo.png" alt="Logo" onclick="window.location.href='../index/index.php';">
   <nav class="menu-navegador">
-    <a href="../../../views/reservas/reserva.php" class="btn-menu">Menus</a>
+    <a href="/menu.php" class="btn-menu">Menus</a>
     <a href="/contactos.php" class="btn-menu">Contactos</a>
-    <a href="/reservas.php" class="btn-menu">Reservas</a>
+    <a href="../../../views/reservas/reserva.php" class="btn-menu">Reservas</a>
   </nav>
   <?php
   // Verificar si el usuario está logeado

@@ -20,6 +20,7 @@ header .logo {
    margin-left: -40px; /* para ajustarlo a la izquierda */
    margin-top: 2em; /* para bajarlo un poco, el logo */
    box-shadow: #b12525;
+   cursor: pointer;
 }
 
 .btn-menu {
