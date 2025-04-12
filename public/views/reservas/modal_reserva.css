@@ -1,0 +1,105 @@
+/* Modal */
+.modal {
+    display: flex; /* Mantén flexbox activo siempre */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    position: fixed; /* Asegura que el modal esté en toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    overflow: hidden; /* Evita problemas de scroll innecesario */
+    visibility: hidden; /* Oculta el modal visualmente */
+    opacity: 0; /* Transparencia inicial */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Suaviza la animación */
+}
+
+.modal.show {
+    visibility: visible; /* Hace visible el modal */
+    opacity: 1; /* Cambia la opacidad para mostrarlo */
+}
+
+.modal-contenido {
+    position: relative;
+    display: flex; /* Activa flexbox */
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cerrar {
+    position: absolute; /* Posiciona la "X" dentro del modal */
+    top: 10px; /* Alinea la "X" desde la parte superior */
+    right: 10px; /* Alinea la "X" desde la derecha */
+    font-size: 24px; /* Tamaño de la "X" */
+    color: #333; /* Color de la "X" */
+    cursor: pointer; /* Cambia el cursor a estilo clic */
+    font-weight: bold; /* Destaca la "X" */
+    background: none; /* Quita cualquier fondo */
+    border: none; /* Sin bordes */
+}
+
+.boton-container {
+    text-align: center; /* Centra el contenido dentro del contenedor */
+}
+/* boton enviar, y su hover */
+.btn-enviar {
+    background: linear-gradient(135deg, #b008ff 0%, #9700d5 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.3s ease;
+    width: 200px; /* Mantiene el tamaño compacto */
+    max-width: 200px; /* Límite máximo */
+    text-align: center; /* Asegura que el texto esté centrado dentro del botón */
+}
+.btn-enviar:hover {
+    transform: scale(1.05); /* Agrega un efecto de zoom suave al pasar el mouse */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Sombra ligera para realce */
+}
+
+.modal-contenido input,
+.modal-contenido select,
+.modal-contenido textarea {
+    width: 100%; /* Asegura que ocupen todo el ancho disponible */
+    padding: 0.8rem; /* Espaciado interno */
+    margin-bottom: 1rem; /* Espacio entre cada campo */
+    border: 1px solid #ccc; /* Borde suave */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 1rem; /* Tamaño de fuente adecuado */
+    font-family: Arial, sans-serif; /* Fuente consistente */
+    background-color: #f9f9f9; /* Fondo ligeramente gris */
+    transition: all 0.3s ease; /* Suave transición en foco */
+}
+
+.modal-contenido input:focus,
+.modal-contenido select:focus,
+.modal-contenido textarea:focus {
+    outline: none; /* Elimina el borde azul por defecto */
+    border-color: #b008ff; /* Cambia el color del borde al hacer foco */
+    box-shadow: 0px 0px 6px rgba(176, 8, 255, 0.5); /* Sombra suave al enfocar */
+    background-color: #fff; /* Fondo blanco para destacar */
+}
+
+.modal-contenido textarea {
+    resize: none; /* Desactiva el redimensionado para mantener el diseño */
+    min-height: 100px; /* Altura mínima para comentarios */
+}
+
+.modal-contenido label {
+    font-size: 0.9rem; /* Ajusta el tamaño del texto del label */
+    font-weight: bold; /* Destaca los labels */
+    color: #333; /* Color de texto oscuro */
+    margin-bottom: 0.5rem; /* Espacio con el input */
+    display: block; /* Asegura que el label esté en una línea aparte */
+}
+
