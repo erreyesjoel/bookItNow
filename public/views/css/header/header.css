@@ -42,6 +42,7 @@ a {
 
 .login-button {
     width: 86px;
+    padding: 12px;
     height: auto;
     margin-left: 64%;
     margin-top: -10px;
@@ -54,7 +55,9 @@ a {
 }
 
 .login-button:hover {
-    background-color: #cccfcc; /* nuevo color de fondo cuando el cursor está sobre el botón */
+    background-color: #ffffff; 
+    transform: scale(1.02); /* Incrementa el tamaño ligeramente para dar una sensación de interacción */
+    opacity: 0.9; /* Sutilmente disminuye la opacidad */
 }
 
 .welcome-message {
