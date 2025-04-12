@@ -13,7 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/../config/google-client.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selecciona un Restaurante</title>
+    <title>Reserva</title>
     <link rel="stylesheet" href="reserva.css">
     <link rel="stylesheet" href="modal_reserva.css">
 
