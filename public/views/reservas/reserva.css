@@ -1,0 +1,16 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* esto asegura que ocupen toda la altura */
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columna */
+}
+
+body {
+    flex: 1; /* El contenido principal se expande para llenar el espacio */
+}
+
+.reser {
+    flex: 1; /* Permite que esta sección ocupe el espacio restante si hay poco contenido */
+}
+

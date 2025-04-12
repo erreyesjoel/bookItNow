@@ -14,9 +14,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/../config/google-client.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas</title>
+    <link rel="stylesheet" href="reserva.css">
 </head>
 <body>
 <h1>Reservas...</h1>
+<div class="reser">rsfsdfs</div>
 <?php include '../seccions/footer/footer.php'?>
 </body>
 </html>
