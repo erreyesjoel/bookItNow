@@ -1,8 +1,7 @@
 <?php
-require_once '../models/User.php';
 require_once __DIR__ . '/../models/User.php';  // Ruta relativa desde controllers/
-require_once __DIR__ . '/../database/connection/connection.php';  // Ruta relativa desde controllers/
-
+require_once __DIR__ . '/../database/connection/connection.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 class AuthController {
     private $userModel;
@@ -31,7 +30,7 @@ class AuthController {
         $googleId = $googleUser->id;
         $name = $googleUser->name;
         $email = $googleUser->email;
-
+        
         // Verificar si el usuario ya existe o crearlo
         $user = $this->userModel->findOrCreateGoogleUser($googleId, $name, $email);
 

@@ -75,12 +75,16 @@ GRANT ALL PRIVILEGES ON itnow.* TO 'administrador'@'localhost';
 -- Refrescar los privilegios para que se apliquen inmediatamente
 FLUSH PRIVILEGES;
 
+
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,  -- Identificador único de usuario
     nombre VARCHAR(255) NOT NULL,  -- Nombre completo del usuario
     correo VARCHAR(255) NOT NULL UNIQUE,  -- Correo electrónico único
-    password VARCHAR(255),  -- Contraseña (solo en registro clásico)
-    google_id VARCHAR(255),  -- ID de Google (solo en registro con Google)
+    password VARCHAR(255) DEFAULT NULL,  -- Contraseña (solo en registro clásico)
+    google_id VARCHAR(255) UNIQUE DEFAULT NULL,  -- ID de Google (solo en registro con Google)
+    tipo_registro ENUM('tradicional', 'google') NOT NULL DEFAULT 'tradicional',  -- Método de registro
     estado ENUM('activo', 'inactivo') DEFAULT 'activo',  -- Estado del usuario
-    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- Fecha de registro
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  -- Fecha de registro
+    email_verificado BOOLEAN DEFAULT FALSE  -- Indica si el correo está verificado
 );
+

@@ -1,9 +1,7 @@
 <?php
 include '../seccions/header/header.php'; 
-include '../../callback.php';  // Retrocede dos directorios
-
 // Incluir el archivo de configuración de Google
-include $_SERVER['DOCUMENT_ROOT'] . '/../callback.php';
+require_once __DIR__ . '/../../callback.php';
 ?>
 
 <!DOCTYPE html>
