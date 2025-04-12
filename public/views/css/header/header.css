@@ -1,17 +1,17 @@
 body { /* para evitar que haya los bordes en blanco en el header, arriba y hacia los lados */
-    margin: 0;
+    margin: auto;
     padding: 0;
 }
 
 header {
-    background-color:  #ffff;
-    width: 100%; /* anchura del header */
-    height: 15vh; /* altura del header */
-    justify-content: flex-start; /* Para alinear el contenido a la izquierda */
-    align-items: center;
     display: flex;
-    padding-left: 0;
+    justify-content: space-between; /* Espaciado entre los elementos del header */
+    align-items: center; /* Alinea verticalmente */
+    width: 100%;
+    height: 15vh;
+    background-color: #fff;
 }
+
 
 header .logo {
    width: 15%;
@@ -56,3 +56,30 @@ a {
 .login-button:hover {
     background-color: #cccfcc; /* nuevo color de fondo cuando el cursor está sobre el botón */
 }
+
+.welcome-message {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: flex-end; /* Alinea todos los elementos hacia la derecha */
+    justify-content: center; /* Centra verticalmente los elementos dentro de .welcome-message */
+    flex-grow: 1; /* Toma espacio restante en el contenedor */
+    margin-right: 40px; /* Desplaza .welcome-message hacia el centro */
+}
+
+.welcome-message span {
+    text-align: right;
+    white-space: nowrap; /* Evita el salto de línea */
+    overflow: hidden; /* Oculta el texto que se desborda */
+    text-overflow: ellipsis; /* Muestra "..." si el texto es demasiado largo */
+    max-width: 200px; /* Establece el ancho máximo del contenedor */
+}
+
+
+.welcome-message a {
+    text-align: right; /* Asegura que el enlace esté alineado */
+    width: 100%; /* Igual que el span, esto asegura consistencia */
+    margin-top: 5px; /* Espaciado entre el texto y el botón */
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+

@@ -26,9 +26,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/database/connection/connection.php';
 
       // Mostrar mensaje de bienvenida
       echo '<div class="welcome-message">';
-      echo '¡Bienvenido, ' . htmlspecialchars($user['nombre']) . '!';
+      echo '<span>¡Bienvenido, ' . htmlspecialchars($user['nombre']) . '!</span>';
       echo '<a href="/controllers/logout.php" class="logout-btn">Cerrar sesión</a>';
       echo '</div>';
+      
   } else {
       // Mostrar el icono original de login
       echo '<img class="login-button" src="../images/login.png" alt="login-button" onclick="window.location.href=\'/views/login/login.php\'">';
